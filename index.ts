@@ -60,5 +60,5 @@ function handleClose(fastify: FastifyInstance, done: HookHandlerDoneFunction) {
 
 export default fastifyPlugin(fastifyNodemailerPlugin, {
   fastify: ">5.0.0",
-  name: "fastify-nodemailer",
+  name: "@asjas/fastify-nodemailer",
 });
