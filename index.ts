@@ -1,7 +1,7 @@
 import type { FastifyInstance, HookHandlerDoneFunction } from "fastify";
 import fastifyPlugin from "fastify-plugin";
-import nodemailer, { type Transporter } from "nodemailer";
-import SMTPPool from "nodemailer/lib/smtp-pool";
+import nodemailer, { TransportOptions, type Transporter } from "nodemailer";
+import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 declare module "fastify" {
   interface FastifyInstance {
@@ -11,9 +11,11 @@ declare module "fastify" {
 
 const { createTransport } = nodemailer;
 
+type NodemailerOptions = TransportOptions | SMTPTransport.Options;
+
 function fastifyNodemailerPlugin(
   fastify: FastifyInstance,
-  options: SMTPPool.Options,
+  options: NodemailerOptions,
   done: HookHandlerDoneFunction,
 ) {
   let transporter: Transporter | null = null;
@@ -29,7 +31,7 @@ function fastifyNodemailerPlugin(
   fastify.decorate("nodemailer", transporter);
 
   // Only add the onClose hook if pooling is enabled
-  if (options.pool) {
+  if ("pool" in options && options.pool) {
     fastify.addHook("onClose", handleClose);
   }
 
