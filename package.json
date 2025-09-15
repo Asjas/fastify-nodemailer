@@ -24,6 +24,7 @@
     "typescript"
   ],
   "scripts": {
+    "prepublish": "tsc",
     "build": "tsc",
     "prettier": "prettier \"**/*.+(ts)\"",
     "format": "npm run prettier -- --write",
