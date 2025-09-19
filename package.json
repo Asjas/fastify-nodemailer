@@ -1,6 +1,6 @@
 {
   "author": "A-J Roos <asjasroos@proton.me>",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "name": "@asjas/fastify-nodemailer",
   "description": "A scoped Fastify plugin wrapping Nodemailer for easy email sending.",
   "main": "./dist/index.js",
