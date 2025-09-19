@@ -4,8 +4,7 @@ import type {
   HookHandlerDoneFunction,
 } from "fastify";
 import fastifyPlugin from "fastify-plugin";
-import * as nodemailerLib from "nodemailer";
-import { TransportOptions, type Transporter } from "nodemailer";
+import nodemailer, { TransportOptions, type Transporter } from "nodemailer";
 import SMTPPool from "nodemailer/lib/smtp-pool";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 
@@ -15,12 +14,14 @@ declare module "fastify" {
   }
 }
 
-declare namespace nodemailer {
+declare namespace fastifyNodemailerPlugin {
+  export interface NodemailerOptions {}
+
   export const fastifyNodemailerPlugin: FastifyPluginCallback;
   export { fastifyNodemailerPlugin as default };
 }
 
-const { createTransport } = nodemailerLib;
+const { createTransport } = nodemailer;
 
 interface PooledOptions extends SMTPPool.Options {
   pool: true;
