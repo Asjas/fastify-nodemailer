@@ -12,26 +12,26 @@ declare module "fastify" {
   }
 }
 
-declare namespace fastifyNodemailerPlugin {
+declare namespace fastifyNodemailer {
   export interface NodemailerOptions extends TransportOptions {
     pool?: boolean;
   }
 
-  export const fastifyNodemailerPlugin: FastifyPluginCallback;
+  export const fastifyNodemailerPlugin: FastifyPluginCallback<NodemailerOptions>;
   export { fastifyNodemailerPlugin as default };
 }
 
 const { createTransport } = nodemailer;
 
 function isPooledOptions(
-  options: fastifyNodemailerPlugin.NodemailerOptions,
+  options: fastifyNodemailer.NodemailerOptions,
 ): boolean {
   return "pool" in options && options.pool === true;
 }
 
 function fastifyNodemailer(
   fastify: FastifyInstance,
-  options: fastifyNodemailerPlugin.NodemailerOptions,
+  options: fastifyNodemailer.NodemailerOptions,
   done: HookHandlerDoneFunction,
 ) {
   let transporter: Transporter | null = null;
@@ -61,6 +61,3 @@ export default fastifyPlugin(fastifyNodemailer, {
   fastify: ">5.0.0",
   name: "@asjas/fastify-nodemailer",
 });
-
-module.exports.default = fastifyNodemailer;
-module.exports.fastifyNodemailer = fastifyNodemailer;
