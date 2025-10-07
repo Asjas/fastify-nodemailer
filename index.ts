@@ -17,8 +17,8 @@ declare namespace fastifyNodemailer {
     pool?: boolean;
   }
 
-  export const fastifyNodemailerPlugin: FastifyPluginCallback<NodemailerOptions>;
-  export { fastifyNodemailerPlugin as default };
+  export const fastifyNodemailer: FastifyPluginCallback<NodemailerOptions>;
+  export { fastifyNodemailer as default };
 }
 
 const { createTransport } = nodemailer;
