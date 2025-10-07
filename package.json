@@ -3,7 +3,7 @@
   "version": "1.0.4",
   "name": "@asjas/fastify-nodemailer",
   "description": "A scoped Fastify plugin wrapping Nodemailer for easy email sending.",
-  "main": "./dist/index.js",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "source": "./index.ts",
   "license": "MIT",
@@ -22,6 +22,11 @@
     "nodemailer",
     "email",
     "typescript"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "prepublish": "tsc",
