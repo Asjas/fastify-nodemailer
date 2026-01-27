@@ -39,7 +39,7 @@
   "dependencies": {
     "@types/nodemailer": "7.0.9",
     "fastify-plugin": "5.1.0",
-    "nodemailer": "7.0.12"
+    "nodemailer": "7.0.13"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
