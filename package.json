@@ -37,7 +37,7 @@
     "check-format": "npm run prettier -- --list-different"
   },
   "dependencies": {
-    "@types/nodemailer": "7.0.5",
+    "@types/nodemailer": "7.0.9",
     "fastify-plugin": "5.1.0",
     "nodemailer": "7.0.12"
   },
