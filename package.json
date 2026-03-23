@@ -45,6 +45,6 @@
     "@trivago/prettier-plugin-sort-imports": "6.0.2",
     "fastify": "5.8.4",
     "prettier": "3.8.1",
-    "typescript": "5.9.3"
+    "typescript": "6.0.2"
   }
 }
