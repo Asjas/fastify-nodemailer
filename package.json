@@ -42,7 +42,7 @@
     "nodemailer": "7.0.13"
   },
   "devDependencies": {
-    "@trivago/prettier-plugin-sort-imports": "6.0.2",
+    "@trivago/prettier-plugin-sort-imports": "6.0.3",
     "fastify": "5.12.8",
     "prettier": "3.10.1",
     "typescript": "5.9.3"
